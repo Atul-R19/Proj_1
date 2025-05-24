@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Profile - Secure Medical Data Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ADD INSURANCE DETAILS HERE</h1>
+</header>
+
+<div class="container">
+    <h2>Insurance Information</h2>
+    <form id="insuranceForm">
+        <label for="insuranceProvider">Insurance Provider:</label>
+        <input type="text" id="insuranceProvider" name="insuranceProvider" placeholder="Enter your insurance provider" required>
+
+        <label for="policyNumber">Policy Number:</label>
+        <input type="text" id="policyNumber" name="policyNumber" placeholder="Enter your policy number" required>
+
+        <label for="coverageStart">Coverage Start Date:</label>
+        <input type="date" id="coverageStart" name="coverageStart" required>
+
+        <label for="coverageEnd">Coverage End Date:</label>
+        <input type="date" id="coverageEnd" name="coverageEnd" required>
+
+        <button type="submit">Update Insurance Information</button>
+    </form>
+
+    <h2>Current Insurance Details</h2>
+    <div id="currentInsuranceDetails">
+        <p><strong>Insurance Provider:</strong> <span id="currentProvider">N/A</span></p>
+        <p><strong>Policy Number:</strong> <span id="currentPolicyNumber">N/A</span></p>
+        <p><strong>Coverage Start:</strong> <span id="currentCoverageStart">N/A</span></p>
+        <p><strong>Coverage End:</strong> <span id="currentCoverageEnd">N/A</span></p>
+    </div>
+</div>
+
+<script>
+    // Example of how you might fetch and display current insurance details
+    document.addEventListener('DOMContentLoaded', function() {
+        // Simulate fetching current insurance details from the server
+        const currentInsurance = {
+            provider: "Health Insurance Co.",
+            policyNumber: "123456789",
+            coverageStart: "2023-01-01",
+            coverageEnd: "2"
+        };
+
+        // Display current insurance details
+        document.getElementById('currentProvider').innerText = currentInsurance.provider;
+        document.getElementById('currentPolicyNumber').innerText = currentInsurance.policyNumber;
+        document.getElementById('currentCoverageStart').innerText = currentInsurance.coverageStart;
+        document.getElementById('currentCoverageEnd').innerText = currentInsurance.coverageEnd;
+
+        // Handle form submission
+        document.getElementById('insuranceForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you would typically send the updated insurance information to the server
+            alert('Insurance information updated successfully!');
+        });
+    });
+</script>
+
+</body>
+</html>
